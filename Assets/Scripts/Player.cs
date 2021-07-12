@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Land")
+        //if(collision.gameObject.tag == "Land")
+        if (collision.gameObject.tag != null)
         {
             isInAir = false;
         }
@@ -26,6 +27,12 @@ public class Player : MonoBehaviour
     {
         Move();
         if (Input.GetKeyDown(KeyCode.Space) && isInAir == false)
+        {
+            Jump();
+            isInAir = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.W) && isInAir == false)
         {
             Jump();
             isInAir = true;

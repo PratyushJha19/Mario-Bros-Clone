@@ -16,10 +16,30 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector2 leftCollisionForce = new Vector2(-600, 1000);
+        Vector2 rightCollisionForce = new Vector2(600, 1000);
+
         //if(collision.gameObject.tag == "Land")
         if (collision.gameObject.tag != null)
         {
             isInAir = false;
+        }
+
+        if (collision.gameObject.tag == "Left Collider")
+        {
+            rb2D.AddForce(leftCollisionForce);
+            print("Life Lost");
+        }
+
+        if (collision.gameObject.tag == "Right Collider")
+        {
+            rb2D.AddForce(rightCollisionForce);
+            print("Life Lost");
+        }
+
+        if (collision.gameObject.tag == "Attack Place")
+        {
+            print("Attacked");
         }
     }
 

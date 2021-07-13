@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb2D;
     public bool isInAir = false;
+    public bool rotatedRight = true;
 
     void Start()
     {
@@ -16,30 +17,27 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 leftCollisionForce = new Vector2(-600, 1000);
-        Vector2 rightCollisionForce = new Vector2(600, 1000);
+        Vector2 leftCollisionForce = new Vector2(-700, 600);
+        Vector2 rightCollisionForce = new Vector2(700, 600);
 
-        //if(collision.gameObject.tag == "Land")
         if (collision.gameObject.tag != null)
         {
             isInAir = false;
         }
 
-        if (collision.gameObject.tag == "Left Collider")
+        if (collision.gameObject.tag == "Enemy")
         {
-            rb2D.AddForce(leftCollisionForce);
-            print("Life Lost");
-        }
+            if (rotatedRight == true)
+            {
+                rb2D.AddForce(leftCollisionForce);
+                print("Damaged R");
+            }
 
-        if (collision.gameObject.tag == "Right Collider")
-        {
-            rb2D.AddForce(rightCollisionForce);
-            print("Life Lost");
-        }
-
-        if (collision.gameObject.tag == "Attack Place")
-        {
-            print("Attacked");
+            else if (rotatedRight == false)
+            {
+                rb2D.AddForce(rightCollisionForce);
+                print("Damaged L");
+            }
         }
     }
 
@@ -63,15 +61,41 @@ public class Player : MonoBehaviour
     {
         float movementSpeed = 4f;
         Vector3 moveValue = new Vector2(2, 0);
-        if (Input.GetKey(KeyCode.D))
+
+        if (Input.GetKey(KeyCode.D) && rotatedRight == false)
         {
             transform.position += moveValue * movementSpeed * Time.deltaTime;
+            RotateRight();
+            rotatedRight = true;
+        }
+
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += moveValue * movementSpeed * Time.deltaTime;
+        }
+
+        else if (Input.GetKey(KeyCode.A) && rotatedRight == true)
+        {
+            transform.position -= moveValue * movementSpeed * Time.deltaTime;
+            RotateLeft();
+            rotatedRight = false;
         }
 
         else if (Input.GetKey(KeyCode.A))
         {
             transform.position -= moveValue * movementSpeed * Time.deltaTime;
         }
+    }
+
+    private void RotateLeft()
+    {
+        transform.rotation = new Quaternion(0, 180, 0, 0);
+    }
+
+    private void RotateRight()
+    {
+        /* new Vector2(0, 0) */
+        transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
     void Jump()

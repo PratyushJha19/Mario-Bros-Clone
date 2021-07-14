@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
     {
         float movementSpeed = 4f;
         Vector3 moveValue = new Vector2(2, 0);
+        //FindObjectOfType<FollowPlayer>().playerIsMoving = true;
 
         if (Input.GetKey(KeyCode.D) && rotatedRight == false)
         {

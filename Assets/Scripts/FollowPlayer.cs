@@ -5,6 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public bool playerIsMoving = false;
+    public Transform mario;
 
     void Start()
     {
@@ -13,9 +14,14 @@ public class FollowPlayer : MonoBehaviour
 
     void Update()
     {
+        
+    }
+
+    void RawCamMVT()
+    {
         float movementSpeed = 4f;
         Vector3 moveValue = new Vector2(2, 0);
-        if(playerIsMoving == true)
+        if (playerIsMoving == true)
         {
             if (Input.GetKey(KeyCode.D))
             {

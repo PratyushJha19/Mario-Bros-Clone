@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerBump : MonoBehaviour
 {
-    public Transform enemy;
     public GameObject mushroomEnemy;
     Rigidbody2D rb2D;
 
@@ -23,9 +22,9 @@ public class PlayerBump : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             print("Attacked");
-            enemy.GetComponentInChildren<BoxCollider2D>().enabled = false;
+            mushroomEnemy.GetComponent<BoxCollider2D>().enabled = false;
             rb2D.gravityScale = 1;
-            Destroy(enemy.gameObject, 3);
+            Destroy(mushroomEnemy.gameObject, 3);
         }
     }
 }

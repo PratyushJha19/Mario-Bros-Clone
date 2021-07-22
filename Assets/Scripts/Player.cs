@@ -8,11 +8,13 @@ public class Player : MonoBehaviour
     Rigidbody2D rb2D;
     public bool isInAir = false;
     public bool rotatedRight = true;
+    Animator playerAnim;
 
     void Start()
     {
         isInAir = false;
         rb2D = GetComponent<Rigidbody2D>();
+        playerAnim = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -46,14 +48,21 @@ public class Player : MonoBehaviour
         Move();
         if (Input.GetKeyDown(KeyCode.Space) && isInAir == false)
         {
+            playerAnim.SetBool("Jump", true);
             Jump();
             isInAir = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && isInAir == false)
+        else if (Input.GetKeyDown(KeyCode.W) && isInAir == false)
         {
+            playerAnim.SetBool("Jump", true);
             Jump();
             isInAir = true;
+        }
+
+        else
+        {
+            playerAnim.SetBool("Jump", false);
         }
     }
 
@@ -68,11 +77,13 @@ public class Player : MonoBehaviour
             transform.position += moveValue * movementSpeed * Time.deltaTime;
             RotateRight();
             rotatedRight = true;
+            playerAnim.SetBool("Walk", true);
         }
 
         else if (Input.GetKey(KeyCode.D))
         {
             transform.position += moveValue * movementSpeed * Time.deltaTime;
+            playerAnim.SetBool("Walk", true);
         }
 
         else if (Input.GetKey(KeyCode.A) && rotatedRight == true)
@@ -80,12 +91,16 @@ public class Player : MonoBehaviour
             transform.position -= moveValue * movementSpeed * Time.deltaTime;
             RotateLeft();
             rotatedRight = false;
+            playerAnim.SetBool("Walk", true);
         }
 
         else if (Input.GetKey(KeyCode.A))
         {
             transform.position -= moveValue * movementSpeed * Time.deltaTime;
+            playerAnim.SetBool("Walk", true);
         }
+
+        else { playerAnim.SetBool("Walk", false); }
     }
 
     private void RotateLeft()

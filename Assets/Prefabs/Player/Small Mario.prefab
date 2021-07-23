@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4590938810723462011}
   m_Layer: 0
   m_Name: Small Mario
-  m_TagString: Player
+  m_TagString: Small Mario
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00011288375, y: -0.057149284}
+  m_Offset: {x: -0.00011288375, y: -0.07230488}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1424032, y: 0.06419413}
+  m_Size: {x: 0.1424032, y: 0.033882935}
   m_EdgeRadius: 0
 --- !u!50 &4983956611469892586
 Rigidbody2D:
@@ -166,7 +166,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0007583611, y: 0.07441519}
+  m_Offset: {x: -0.004487803, y: 0.03485996}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -177,7 +177,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.10790553, y: 0.018379956}
+  m_Size: {x: 0.060107093, y: 0.09749042}
   m_EdgeRadius: 0
 --- !u!114 &4590938810723462011
 MonoBehaviour:

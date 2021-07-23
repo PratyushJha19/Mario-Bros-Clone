@@ -6,7 +6,7 @@ public class PickupTile : MonoBehaviour
 {
     public int tileHealth = 1;
     public GameObject afterHitTile;
-    public GameObject pickup;
+    public GameObject[] pickup;
 
     void Start()
     {
@@ -20,12 +20,20 @@ public class PickupTile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Small Mario")
         {
             tileHealth -= 1;
             Destroy(gameObject);
             afterHitTile.SetActive(true);
-            pickup.SetActive(true);
+            pickup[0].SetActive(true);
+        }
+
+        else if (collision.gameObject.tag == "Big Mario")
+        {
+            tileHealth -= 1;
+            Destroy(gameObject);
+            afterHitTile.SetActive(true);
+            pickup[1].SetActive(true);
         }
     }
 }

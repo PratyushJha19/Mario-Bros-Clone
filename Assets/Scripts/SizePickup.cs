@@ -27,9 +27,10 @@ public class SizePickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Small Mario")
         {
             Destroy(gameObject);
+            smallMario = FindObjectOfType<SmallMario>();
             var instantiatedBigMario = Instantiate(bigMario, smallMario.transform.position, Quaternion.identity);
             cinemachine.Follow = instantiatedBigMario.transform;
             Destroy(smallMario.gameObject);

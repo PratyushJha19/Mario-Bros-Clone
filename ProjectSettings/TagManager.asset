@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - LeftObstacle
   - RightObstacle
+  - Small Mario
+  - Big Mario
+  - Big Mario Leg
   layers:
   - Default
   - TransparentFX

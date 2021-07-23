@@ -9,6 +9,7 @@ public class SmallMario : MonoBehaviour
     public bool isInAir = false;
     public bool rotatedRight = true;
     Animator playerAnim;
+    public int hP = 2;
 
     void Start()
     {
@@ -29,6 +30,11 @@ public class SmallMario : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
+            hP -= 1;
+            if (hP <= 0)
+            {
+                //GameOver
+            }
             if (rotatedRight == true)
             {
                 rb2D.AddForce(leftCollisionForce);

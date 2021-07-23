@@ -21,7 +21,7 @@ public class PlayerBump : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            print("Attacked");
+            //print("Attacked from Player");
             mushroomEnemy.GetComponent<BoxCollider2D>().enabled = false;
             rb2D.gravityScale = 1;
             Destroy(mushroomEnemy.gameObject, 3);

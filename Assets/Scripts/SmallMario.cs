@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class SmallMario : MonoBehaviour
 {
     Rigidbody2D rb2D;
     public bool isInAir = false;
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
         Vector2 leftCollisionForce = new Vector2(-700, 600);
         Vector2 rightCollisionForce = new Vector2(700, 600);
 
-        if (collision.gameObject.tag != null)
+        if (collision.gameObject.tag != "Land" || collision.gameObject.tag != "LeftObstacle" || collision.gameObject.tag != "RightObstacle")
         {
             isInAir = false;
         }
@@ -32,13 +32,11 @@ public class Player : MonoBehaviour
             if (rotatedRight == true)
             {
                 rb2D.AddForce(leftCollisionForce);
-                print("Damaged R");
             }
 
             else if (rotatedRight == false)
             {
                 rb2D.AddForce(rightCollisionForce);
-                print("Damaged L");
             }
         }
     }

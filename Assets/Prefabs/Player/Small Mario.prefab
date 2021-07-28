@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1834766578}
   - component: {fileID: 1921455094}
   - component: {fileID: 4590938810723462011}
+  - component: {fileID: 456589487851213564}
   m_Layer: 0
   m_Name: Small Mario
   m_TagString: Small Mario
@@ -194,3 +195,19 @@ MonoBehaviour:
   isInAir: 0
   rotatedRight: 1
   hP: 2
+--- !u!114 &456589487851213564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983956611469892580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee597e6ece17474684aa0e4f0cbdc94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyRb:
+  - {fileID: 0}
+  - {fileID: 0}
+  health: 2

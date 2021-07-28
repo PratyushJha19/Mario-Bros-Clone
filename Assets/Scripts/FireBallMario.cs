@@ -63,7 +63,7 @@ public class FireBallMario : MonoBehaviour
             isInAir = true;
         }
 
-        else if (Input.GetKeyDown(KeyCode.W) && isInAir == false)
+        else if(Input.GetKeyDown(KeyCode.W) && isInAir == false)
         {
             playerAnim.SetBool("Jump", true);
             Jump();

@@ -70,9 +70,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5131696041676173544}
+  - component: {fileID: 371167849}
   m_Layer: 0
   m_Name: Pickup Tile
-  m_TagString: Untagged
+  m_TagString: Pickup Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,6 +96,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &371167849
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5131696041676173543}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.22192258}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.6783258}
+  m_EdgeRadius: 0
 --- !u!114 &1212534737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2825a578ceed63247999459c6a23db86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireBallMario: {fileID: 382383095, guid: d42fb0725ec9b664da58cd9a45f9be83, type: 3}
+  bigMario: {fileID: 1643836932691242170, guid: 4ae1843adf838d947944c1198cd3a8ee, type: 3}
 --- !u!1001 &4098048506211796774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -162,6 +191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: After Pickup Tile 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7668799366134091638, guid: c3b7613ac3344c04c8e5d4f1e63e8fa3, type: 3}
+      propertyPath: m_TagString
+      value: Pickup Tile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b7613ac3344c04c8e5d4f1e63e8fa3, type: 3}
 --- !u!1 &5958892340414957648 stripped
@@ -197,6 +230,14 @@ PrefabInstance:
       propertyPath: pickup.Array.data[1]
       value: 
       objectReference: {fileID: 8650959902445417002}
+    - target: {fileID: 7105204097739144274, guid: 3b497c4547fbbed428c6a2c4ed0484c7, type: 3}
+      propertyPath: m_Size.y
+      value: 0.072073705
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105204097739144274, guid: 3b497c4547fbbed428c6a2c4ed0484c7, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.043963145
+      objectReference: {fileID: 0}
     - target: {fileID: 7105204097739144275, guid: 3b497c4547fbbed428c6a2c4ed0484c7, type: 3}
       propertyPath: m_RootOrder
       value: 0

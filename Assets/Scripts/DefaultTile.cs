@@ -18,7 +18,7 @@ public class DefaultTile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Big Mario")
+        if (collision.gameObject.tag == "Big Mario"|| collision.gameObject.tag == "Fire Ball Mario")
         {
             Destroy(parent.gameObject);
             var instantiatedShatterTile = Instantiate(shatterTile, gameObject.transform.position, Quaternion.identity);

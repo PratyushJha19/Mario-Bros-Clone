@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy2 : MonoBehaviour
 {
     public float movementSpeed = 1.2f;
     public bool collidedWithLeftObstacle = false;
@@ -14,21 +14,21 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if(collidedWithLeftObstacle == false)
+        if (collidedWithLeftObstacle == true)
         {
             MoveLeft();
         }
-        else if (collidedWithLeftObstacle == true)
+        else if (collidedWithLeftObstacle == false)
         {
             MoveRight();
         }
     }
 
-    
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "LeftObstacle")
+        if (collision.gameObject.tag == "LeftObstacle")
         {
             collidedWithLeftObstacle = true;
             print("Reverted Direction");

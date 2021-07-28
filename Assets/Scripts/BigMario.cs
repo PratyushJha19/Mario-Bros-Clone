@@ -32,6 +32,11 @@ public class BigMario : MonoBehaviour
             isInAir = false;
         }
 
+        if (collision.gameObject.tag == null || (collision.gameObject.tag == "Invisible Collider"))
+        {
+            isInAir = true;
+        }
+
         if (collision.gameObject.tag == "Enemy")
         {
             var instantiatedSmallMario = Instantiate(smallMario, gameObject.transform.position, Quaternion.identity);
@@ -122,7 +127,7 @@ public class BigMario : MonoBehaviour
 
     void Jump()
     {
-        Vector3 jumpValue = new Vector3(0, 1250);
+        Vector3 jumpValue = new Vector3(0, 1300);
         rb2D.AddForce(jumpValue);
     }
 }

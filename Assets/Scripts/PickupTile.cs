@@ -28,7 +28,7 @@ public class PickupTile : MonoBehaviour
             pickup[0].SetActive(true);
         }
 
-        else if (collision.gameObject.tag == "Big Mario")
+        else if (collision.gameObject.tag == "Big Mario" /* || collision.gameObject.tag == "Fire Ball Mario" */)
         {
             tileHealth -= 1;
             Destroy(gameObject);

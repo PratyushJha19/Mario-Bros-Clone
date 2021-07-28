@@ -31,9 +31,16 @@ public class SizePickup : MonoBehaviour
         {
             Destroy(gameObject);
             smallMario = FindObjectOfType<SmallMario>();
-            var instantiatedBigMario = Instantiate(bigMario, smallMario.transform.position, Quaternion.identity);
-            cinemachine.Follow = instantiatedBigMario.transform;
             Destroy(smallMario.gameObject);
+
+            var instantiatedBigMario = Instantiate(bigMario, smallMario.transform.position, Quaternion.identity);
+            int numBigMarios = FindObjectsOfType<BigMario>().Length;
+            if (numBigMarios > 1)
+            {
+                Destroy(instantiatedBigMario);
+            }
+
+            cinemachine.Follow = instantiatedBigMario.transform;
         }
     }
 }

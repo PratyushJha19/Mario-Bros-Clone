@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 913449785}
   m_Layer: 0
   m_Name: Default Tiles Set 1
-  m_TagString: Untagged
+  m_TagString: Default Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0021233559, y: 0.033145785}
+  m_Offset: {x: -0.0021233559, y: 0.03376192}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -70,7 +70,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2590437, y: 1.0662916}
+  m_Size: {x: 1.2590437, y: 1.0650593}
   m_EdgeRadius: 0
 --- !u!1001 &2163768174290778625
 PrefabInstance:
@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3703976973405674578, guid: 798e51f0e9c031f4894b5030578a292d, type: 3}
       propertyPath: m_Size.x
-      value: 0.17620033
+      value: 0.12387917
       objectReference: {fileID: 0}
     - target: {fileID: 3703976973405674578, guid: 798e51f0e9c031f4894b5030578a292d, type: 3}
       propertyPath: m_Size.y
@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3703976973405674578, guid: 798e51f0e9c031f4894b5030578a292d, type: 3}
       propertyPath: m_Offset.x
-      value: -0.00021085143
+      value: 0.0056682713
       objectReference: {fileID: 0}
     - target: {fileID: 3703976973405674578, guid: 798e51f0e9c031f4894b5030578a292d, type: 3}
       propertyPath: m_Offset.y

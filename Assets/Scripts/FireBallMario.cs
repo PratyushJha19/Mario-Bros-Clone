@@ -1,18 +1,21 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
-public class SmallMario : MonoBehaviour
+public class FireBallMario : MonoBehaviour
 {
+    CinemachineVirtualCamera virtualCamera;
+
     Rigidbody2D rb2D;
     public bool isInAir = false;
     public bool rotatedRight = true;
     Animator playerAnim;
-    public int hP = 2;
+    public BigMario bigMario;
 
     void Start()
     {
+        virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
         isInAir = false;
         rb2D = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
@@ -28,18 +31,16 @@ public class SmallMario : MonoBehaviour
             isInAir = false;
         }
 
-        //if (collision.gameObject.tag == "Default Tile" || (collision.gameObject.tag == "Pickup Tile"))
-        //{
-        //    isInAir = true;
-        //}
+        if (collision.gameObject.tag == null || (collision.gameObject.tag == "Invisible Collider"))
+        {
+            isInAir = true;
+        }
 
         if (collision.gameObject.tag == "Enemy")
         {
-            hP -= 1;
-            if (hP <= 0)
-            {
-                //GameOver
-            }
+            var instantiatedBigMario = Instantiate(bigMario, gameObject.transform.position, Quaternion.identity);
+            virtualCamera.Follow = instantiatedBigMario.transform;
+            Destroy(gameObject);
             if (rotatedRight == true)
             {
                 rb2D.AddForce(leftCollisionForce);
@@ -84,7 +85,8 @@ public class SmallMario : MonoBehaviour
         if (Input.GetKey(KeyCode.D) && rotatedRight == false)
         {
             transform.position += moveValue * movementSpeed * Time.deltaTime;
-            RotateRight();
+            //RotateRight();
+            transform.Rotate(0f, 180f, 0f);
             rotatedRight = true;
             playerAnim.SetBool("Walk", true);
         }
@@ -98,7 +100,8 @@ public class SmallMario : MonoBehaviour
         else if (Input.GetKey(KeyCode.A) && rotatedRight == true)
         {
             transform.position -= moveValue * movementSpeed * Time.deltaTime;
-            RotateLeft();
+            //RotateLeft();
+            transform.Rotate(0f, 180f, 0f);
             rotatedRight = false;
             playerAnim.SetBool("Walk", true);
         }

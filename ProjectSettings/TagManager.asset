@@ -11,6 +11,11 @@ TagManager:
   - Small Mario
   - Big Mario
   - Big Mario Leg
+  - Fire Ball Mario
+  - Default Tile
+  - Pickup Tile
+  - Fire Ball
+  - Invisible Collider
   layers:
   - Default
   - TransparentFX

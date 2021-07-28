@@ -19,7 +19,7 @@ public class PlayerBump : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Big Mario" || collision.gameObject.tag == "Small Mario")
+        if (collision.gameObject.tag == "Big Mario" || collision.gameObject.tag == "Small Mario" || collision.gameObject.tag == "Fire Ball Mario")
         {
             //print("Attacked from Player");
             mushroomEnemy.GetComponent<BoxCollider2D>().enabled = false;

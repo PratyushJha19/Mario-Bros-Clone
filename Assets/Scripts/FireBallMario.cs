@@ -13,6 +13,9 @@ public class FireBallMario : MonoBehaviour
     Animator playerAnim;
     public BigMario bigMario;
 
+    Vector2 leftCollisionForce = new Vector2(-700, 600);
+    Vector2 rightCollisionForce = new Vector2(700, 600);
+
     void Start()
     {
         virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
@@ -23,9 +26,6 @@ public class FireBallMario : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 leftCollisionForce = new Vector2(-700, 600);
-        Vector2 rightCollisionForce = new Vector2(700, 600);
-
         if (collision.gameObject.tag != "Land" || collision.gameObject.tag != "LeftObstacle" || collision.gameObject.tag != "RightObstacle")
         {
             isInAir = false;
@@ -38,18 +38,27 @@ public class FireBallMario : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            var instantiatedBigMario = Instantiate(bigMario, gameObject.transform.position, Quaternion.identity);
-            virtualCamera.Follow = instantiatedBigMario.transform;
-            Destroy(gameObject);
-            if (rotatedRight == true)
-            {
-                rb2D.AddForce(leftCollisionForce);
-            }
+            InstantiateSmallMario();
+        }
+    }
 
-            else if (rotatedRight == false)
-            {
-                rb2D.AddForce(rightCollisionForce);
-            }
+    public void InstantiateSmallMario()
+    {
+        var instantiatedBigMario = Instantiate(bigMario, gameObject.transform.position, Quaternion.identity);
+        if (FindObjectsOfType<BigMario>().Length > 1)
+        {
+            Destroy(instantiatedBigMario.gameObject);
+        }
+        virtualCamera.Follow = instantiatedBigMario.transform;
+        Destroy(gameObject);
+        if (rotatedRight == true)
+        {
+            rb2D.AddForce(leftCollisionForce);
+        }
+
+        else if (rotatedRight == false)
+        {
+            rb2D.AddForce(rightCollisionForce);
         }
     }
 

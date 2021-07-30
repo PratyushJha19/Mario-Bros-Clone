@@ -39,5 +39,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        else if (collision.gameObject.tag == "Crushed Turtle" || collision.gameObject.tag == "Crushed Turtle Hitter")
+        {
+            Destroy(gameObject);
+        }
     }
 }

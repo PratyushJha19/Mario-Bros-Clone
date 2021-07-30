@@ -19,28 +19,50 @@ public class PlayerHealth : MonoBehaviour
         virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
     }
 
-    void Update()
+    private void Update()
     {
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
             health -= 1;
             if (health <= 0)
             {
-                anim.SetBool("Dead", true);
-                GetComponent<SmallMario>().enabled = false;
-                playerRb.velocity = new Vector2(0, 0);
-                FindObjectOfType<Enemy>().enabled = false;
-                FindObjectOfType<Enemy2>().enabled = false;
-                virtualCamera.Follow = null;
-                virtualCamera.LookAt = null;
-                Invoke("PullPlayer", 1f);
+                Die2();
             }
         }
+
+        //if (collision.gameObject.tag == "Crushed Turtle Hitter")
+        //{
+        //    Die();
+        //}
+    }
+
+    private void Die2()
+    {
+        anim.SetBool("Dead", true);
+        GetComponent<SmallMario>().enabled = false;
+        playerRb.velocity = new Vector2(0, 0);
+        FindObjectOfType<Enemy2>().enabled = false;
+        FindObjectOfType<TurtleEnemy>().enabled = false;
+        FindObjectOfType<Enemy>().enabled = false;
+        virtualCamera.Follow = null;
+        virtualCamera.LookAt = null;
+        Invoke("PullPlayer", 1f);
+    }
+
+    public void Die()
+    {
+        print("small mario");
+        anim.SetBool("Dead", true);
+        GetComponent<SmallMario>().enabled = false;
+        virtualCamera.Follow = null;
+        FindObjectOfType<CrushedTurtle>().enabled = false;
+        virtualCamera.LookAt = null;
+        Invoke("PullPlayer", 1f);
     }
 
     void PullPlayer()

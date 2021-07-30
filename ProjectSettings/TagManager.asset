@@ -16,6 +16,9 @@ TagManager:
   - Pickup Tile
   - Fire Ball
   - Invisible Collider
+  - Turtle Head Bump
+  - Crushed Turtle Hitter
+  - Crushed Turtle
   layers:
   - Default
   - TransparentFX

@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.tag == "LeftObstacle")
         {
             collidedWithLeftObstacle = true;
-            print("Reverted Direction");
+            //print("Reverted Direction");
             //MoveRight();
         }
 

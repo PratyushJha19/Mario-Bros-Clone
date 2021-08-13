@@ -21,19 +21,19 @@ public class KillPlayer : MonoBehaviour
     {
         if(collision.gameObject.tag == "Small Mario")
         {
-            print("Player Hurt");
+            //print("Player Hurt");
             FindObjectOfType<SmallMario>().GetComponent<PlayerHealth>().Die();
         }
 
         if (collision.gameObject.tag == "Big Mario")
         {
-            print("big mario hurt");
+            //print("big mario hurt");
             FindObjectOfType<BigMario>().InstantiateSmallMario();
         }
 
         if (collision.gameObject.tag == "Fire Ball Mario")
         {
-            print("fire ball mario hurt");
+            //print("fire ball mario hurt");
             FindObjectOfType<FireBallMario>().InstantiateSmallMario();
         }
 

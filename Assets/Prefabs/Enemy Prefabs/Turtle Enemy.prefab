@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3500207641390319475}
   m_Layer: 0
   m_Name: Head Bump
-  m_TagString: Untagged
+  m_TagString: Turtle Head Bump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0022441372, y: 0.14656189}
+  m_Offset: {x: -0.0022441372, y: 0.1729568}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15721948, y: 0.02085346}
+  m_Size: {x: 0.15721948, y: 0.035997257}
   m_EdgeRadius: 0
 --- !u!114 &3500207641390319475
 MonoBehaviour:
@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1b8b6c42beca8468cb418c1381ea2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turtleEnemy: {fileID: 0}
-  crushedTurtle: {fileID: 0}
+  turtleEnemy: {fileID: 3905437824914531832}
+  crushedTurtle: {fileID: 4610610879342221350, guid: a659d4969c01d904bbf74f8fad2547d6, type: 3}
 --- !u!1 &3905437824914531832
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0022486746, y: 0.005873479}
+  m_Offset: {x: -0.0022486746, y: 0.0020464584}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -182,7 +182,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1775175, y: 0.24217738}
+  m_Size: {x: 0.1775175, y: 0.23452334}
   m_EdgeRadius: 0
 --- !u!50 &5727530540285078012
 Rigidbody2D:

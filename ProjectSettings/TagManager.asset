@@ -19,6 +19,7 @@ TagManager:
   - Turtle Head Bump
   - Crushed Turtle Hitter
   - Crushed Turtle
+  - Down Collider
   layers:
   - Default
   - TransparentFX

@@ -44,5 +44,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        else if (collision.gameObject.tag == "Building Block")
+        {
+            Destroy(gameObject);
+        }
     }
 }
